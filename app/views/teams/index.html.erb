@@ -1,5 +1,9 @@
 <h1>All Teams</h1>
 
+<div class="row">
 <% @teams.each do |team| %>
+<div class="col">
 <%= link_to team.name, team %>
+</div>
 <% end %>
+</div>
