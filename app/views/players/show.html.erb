@@ -1,0 +1,18 @@
+<h1><%= @artist.name %></h1>
+
+<%= image_tag @artist.image, :class => 'feature' if @artist.image.present? %>
+<ul>
+<li>Name: <%= @artist.name %></li>
+<li>Nationality: <%= @artist.nationality %></li>
+<% unless @artist.skillmove %>
+<li>Skillmove: <%= @artist.skillmove %></li>
+<% end %>
+
+<%# <% @artist.works.each do |work| %>
+<%# <%= link_to image_tag(work.image, :class => 'thumb'), work %>
+<%# <% end %> 
+
+<div class="controls">
+<%= button_to "Edit Artist", edit_artist_path(@artist), :method => 'get' %> 
+<%= button_to "Delete artist", artist_path(@artist), :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+</div>

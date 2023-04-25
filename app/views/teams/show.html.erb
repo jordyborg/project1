@@ -1,0 +1,16 @@
+<h1><%= @team.name %></h1>
+
+<%# image_tag @team.image, :class => 'feature' %>
+
+<ul>
+<li>Team Name: <%= @team.name %></li>
+<% if @team.players.present? %>
+<li>Skiller: <%= link_to @team.players.name, @team.players %></li>
+<% end %>
+<li>Tactics: <%= @team.tactic %></li>
+</ul>
+
+<div class="controls">
+<%= link_to "Edit team", edit_team_path(@team) %>
+<%= link_to "Delete team", @team, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+</div>
