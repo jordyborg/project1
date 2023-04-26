@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dmv3ktoe5
+  api_key: '813795181622461'
+  api_secret: dcAPPBWCh14uBkAmcd2ab32iIpg
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: dmv3ktoe5
+  api_key: '813795181622461'
+  api_secret: dcAPPBWCh14uBkAmcd2ab32iIpg
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: dmv3ktoe5
+  api_key: '813795181622461'
+  api_secret: dcAPPBWCh14uBkAmcd2ab32iIpg
+  enhance_image_tag: true
+  static_file_support: false

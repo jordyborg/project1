@@ -10,6 +10,11 @@ class TeamsController < ApplicationController
     
       def create
         team = Team.create team_params
+        if params[:file].present?
+        req = Cloudinary::Uploader.upload(params[:file])
+        work.image_url = req["public_id"]
+        work.save
+        end
         redirect_to team 
       end
     

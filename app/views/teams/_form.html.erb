@@ -1,9 +1,14 @@
-<%= form_for @team do |f| %>
+<%= form_for(@team, :html => { :multipart => true }) do |f| %>
+
+<%# <div class= ></div> %>
+
 <%= f.label :name %>
 <%= f.text_field :name %>
 
 <%= f.label :tactic %>
 <%= f.text_field :tactic %>
 
-<%= f.submit %>
+<%= f.cl_image_upload :image_url %>
+
+<%= f.submit nil, class: 'form-btn' %>
 <% end %>
