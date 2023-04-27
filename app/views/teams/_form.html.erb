@@ -1,4 +1,4 @@
-<%= form_for(@team, :html => { :multipart => true }) do |f| %>
+<%= form_for(@team, :html => {:multipart => true }) do |f| %>
 
 <%# <div class= ></div> %>
 
@@ -8,7 +8,8 @@
 <%= f.label :tactic %>
 <%= f.text_field :tactic %>
 
+<%= f.label :image %>
 <%= f.cl_image_upload :image_url %>
-
 <%= f.submit nil, class: 'form-btn' %>
+
 <% end %>

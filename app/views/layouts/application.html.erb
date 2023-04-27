@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Fifa Street</title>
+    <title>FIFA Street Skillers</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= cloudinary_js_config %>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     
   </head>
+  
 
   <body>
     <div class="container">
     <nav>    
-      <%= link_to "home", root_path %>
+      <%= link_to "FIFA", root_path %>
         <% if @current_user.present? %>
         <%# if @current_user.admin? %>
           <%# link_to "All Users", users_path %>
@@ -32,4 +34,6 @@
     <%= yield %>
     </div>
   </body>
+
+  
 </html>

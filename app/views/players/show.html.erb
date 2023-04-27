@@ -1,18 +1,19 @@
-<h1><%= @artist.name %></h1>
+<h1><%= @player.name %></h1>
 
-<%= image_tag @artist.image, :class => 'feature' if @artist.image.present? %>
-<ul>
-<li>Name: <%= @artist.name %></li>
-<li>Nationality: <%= @artist.nationality %></li>
-<% unless @artist.skillmove %>
-<li>Skillmove: <%= @artist.skillmove %></li>
-<% end %>
+<%= cl_image_tag @player.image, :class => 'feature' if @player.image.present? %>
+<ul class='list-group'>
+    <li class='list-group-item'>Name: <%= @player.name %></li>
+    <li>Nationality: <%= @player.nationality %></li>
+    <% if @player.skillmove.present? %>
+        <li>Skillmove: <%= @player.skillmove %></li>
+</ul>
+    <% end %>
 
-<%# <% @artist.works.each do |work| %>
+<%# <% @player.works.each do |work| %>
 <%# <%= link_to image_tag(work.image, :class => 'thumb'), work %>
 <%# <% end %> 
 
-<div class="controls">
-<%= button_to "Edit Artist", edit_artist_path(@artist), :method => 'get' %> 
-<%= button_to "Delete artist", artist_path(@artist), :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+<div class="panel panel-primary">
+<%= button_to "Edit player", edit_player_path(@player), :method => 'get' %> 
+<%= button_to "Delete player", player_path(@player), :method => :delete, :data => { :confirm => 'Are you sure?' } %>
 </div>

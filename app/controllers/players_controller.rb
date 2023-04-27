@@ -10,6 +10,12 @@ class PlayersController < ApplicationController
   
     def create
       player = Player.create player_params
+      if params[:file].present? 
+        req = Cloudinary::Uploader.upload(params[:file])
+        player.image = req["public_id"]
+        player.save
+      end
+
       redirect_to player
     end
   
@@ -19,7 +25,12 @@ class PlayersController < ApplicationController
   
     def update
       player = Player.find params[:id]
-      player.update player_params
+      if params[:file].present? 
+        req = Cloudinary::Uploader.upload(params[:file])
+        player.image = req["public_id"]
+        end
+      player.update_attributes player_params
+      player.save
       redirect_to player
     end
   
@@ -36,7 +47,7 @@ class PlayersController < ApplicationController
     private
     # Research this technique: Strong Params... is a way to sanitise data by ensuring it's on our safe list
     def player_params
-      params.require(:player).permit(:name, :nationality, :dob, :period, :image)
+      params.require(:player).permit(:name, :nationality, :skillmove, :image)
     end
   
   end

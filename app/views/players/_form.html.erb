@@ -1,13 +1,16 @@
-<%= form_for @artist do |f| %>
+<%= form_for(@player, :html => {:multipart => true }) do |f| %>
 <%= f.label :name %>
 <%= f.text_field :name %>
 
 <%= f.label :nationality %>
-<%= f.text_field :nationality %>
+<%= f.text_field :nationality %> 
 
-<%= f.label :skillmove, 'elastico' %>
-<%= f.text_field :skillmove, :placeholder => 'What is your tekkerz?' %>
+<%= f.label :skillmove, :placeholder => 'elastico ' %>
+<%= f.text_field :skillmove, :placeholder => 'What is your tekkerz? ' %>
 
-<%= f.submit %>
+
+<%= f.label :image %>
+<%= f.cl_image_upload :image %>
+<%= f.submit nil, class: 'form-btn' %>
 
 <% end %>

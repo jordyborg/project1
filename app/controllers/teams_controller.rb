@@ -15,6 +15,7 @@ class TeamsController < ApplicationController
         work.image_url = req["public_id"]
         work.save
         end
+
         redirect_to team 
       end
     
@@ -24,7 +25,12 @@ class TeamsController < ApplicationController
     
       def update
         team = Team.find params[:id]
-        team.update team_params
+        if params[:file].present?
+          req = Cloudinary::Uploader.upload(params[:file])
+        team.image = req["public_id"]
+        end
+      team.update_attributes team_params
+      team.save
         redirect_to team
       end
     
@@ -40,6 +46,7 @@ class TeamsController < ApplicationController
     
       private
       def team_params
-        params.require(:team).permit(:name, :tactic, :created_at, :updated_at)
-    end
-    end
+        params.require(:team).permit(:name, :tactic, :created_at, :updated_at, :image)
+      end
+
+  end

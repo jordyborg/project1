@@ -1,10 +1,11 @@
 <h1>All Players</h1>
 
-<% @artists.each do |artist| %>
-<%= image_tag artist.image, :class => 'thumb' if artist.image.present? %>
+<% @players.each do |player| %>
+<%= image_tag player.image, :class => 'thumb' if player.image.present? %>
 <ul>
-<li>Name: <%= link_to artist.name, artist %></li>
-<li>Nationality: <%= artist.nationality %></li>
-<% unless artist.skillmove %>
-<li>Skillmove: <%= artist.skillmove %></li>
+<li>Name: <%= link_to player.name, player %></li>
+<li>Nationality: <%= player.nationality %></li>
+<% unless player.skillmove.nil? %>
+<li>Skillmove: <%= player.skillmove %></li>
+<% end %>
 <% end %>
