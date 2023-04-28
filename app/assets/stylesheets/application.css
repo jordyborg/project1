@@ -13,3 +13,26 @@
  *= require_tree .
  *= require_self
  */
+
+.feature {
+    border-radius: 3em;
+}
+
+
+
+body {
+    height: 105vh;
+    border: 40vmin;
+    background: linear-gradient(612deg, #868686, #ff9d009c);
+    color: #3e3801;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    padding: 8%;
+}
+
+html {
+    font-size: 120px;
+    width: 200vmin;
+    height: 200vmin;
+}
