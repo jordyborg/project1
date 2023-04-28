@@ -16,11 +16,36 @@
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/">Street Skillerz</a>
+        <a class="navbar-brand" href="/">Street Skillers:DB</a>
+          <nav>    
+      <%= link_to "FIFA", root_path %>
+        <% if @current_user.present? %>
+        <%# if @current_user.admin? %>
+        <% end %>
+        
+        
+          <%= link_to "All Users", users_path %>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        
+        <%# THIS IS THE OLD CODE %>
+        <%# <div class="container">
+    <nav>    
+      <%= link_to "FIFA", root_path %>
+        <%# if @current_user.present? %>
+        <%# if @current_user.admin? %>
+          <%# link_to "All Users", users_path %>
+        <%# end %>
+          <%#= link_to "New Team", new_team_path %>
+          <%#= link_to "All Teams", teams_path %>
+          <%#= link_to "New Player", new_player_path %>
+          <%#= link_to "All Players", players_path %>
+          <%#= link_to "Log out #{ @current_user.email }", login_path, :method => :delete %>
+        <%# else %>
+          <%#= link_to "Sign up", new_user_path %>
+          <%#= link_to 'Sign in', login_path %>
+        <%# end %>
+
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item">
@@ -45,6 +70,7 @@
               </ul>
             </li>
           </ul>
+          
           
         </div>
       </div>
